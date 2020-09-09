@@ -14,7 +14,8 @@
     "express": "^4.17.1",
     "html5-boilerplate": "0.0.1",
     "mongoose": "^5.10.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.7.5",

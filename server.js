@@ -42,9 +42,9 @@ app.use("/api/athletes", athletesRouter);
 app.use("/api/sports", sportsRouter);
 
 // catch 404 and forward to error handler
-app.use((req, res, next) => {
-  next(createError(404));
-});
+// app.use((req, res, next) => {
+//   next(createError(404));
+// });
 
 // error handler
 app.use((err, req, res) => {

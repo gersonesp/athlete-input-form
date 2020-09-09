@@ -1,0 +1,152 @@
+<div class="container formContainer">
+    <div class="formHeader">
+        <h1 ng-header="formHeaderContent">{{formHeader}}</h1>
+        <a href="/#!/list">View Current List</a>
+    </div>
+    <form class="container formContainer" ng-submit="getSummary($event)" ng-hide="formHidden">
+
+        <div class="row formSectionOne">
+            <div class="col">
+                <div class="inputWrapper">
+                    <label for="nameInput">Name:</label>
+                    <input type="text" class="form-control" id="nameInput" ng-required="required"
+                        ng-model="newAthlete.name" />
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="nationalityInput">Nationality:</label>
+                    <input type="text" class="form-control" id="nationalityInput" ng-required="required"
+                        ng-model="newAthlete.nationality" />
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="genderInput">gender:</label>
+                    <select type="text" class="form-control" id="genderInput" ng-required="required"
+                        ng-model="newAthlete.gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="inputWrapper">
+                    <label for="dobInput">D.O.B:</label>
+                    <input type="date" class="form-control" id="dobInput" placeholder="MM/DD/YYYY"
+                        ng-required="required" ng-model="newAthlete.dob" />
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="locationInput">Location:</label>
+                    <input type="text" class="form-control" id="locationInput" ng-required="required"
+                        ng-model="newAthlete.location" />
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="maritalInput">Marital Status:</label>
+                    <select type="text" class="form-control" id="maritalInput" ng-required="required"
+                        ng-model="newAthlete.marital">
+                        <option>Single</option>
+                        <option>Married</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="formSectionTwo">
+            <div class="row">
+                <div class="col">
+                    <div class="inputWrapper">
+                        <label for="descriptionInput">Description:</label>
+                        <textarea type="text-area" class="form-control" id="descriptionInput"
+                            ng-model="newAthlete.description"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="inputWrapper">
+                        <label for="sportInput">Sport:</label>
+                        <select type="text" class="form-control" id="sportInput" ng-required="required"
+                            ng-model="selected_sport" ng-options="sport for sport in sportsList">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="inputWrapper">
+                        <label for="teamInput">Team:</label>
+                        <input type="text" class="form-control" id="teamInput" ng-required="required"
+                            ng-model="newAthlete.team" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-control">Next</button>
+    </form>
+
+    <div class="summary" ng-hide="summaryHidden">
+
+        <div ng-model="newAthlete" class="newAthlete">
+            <div class="cardWrapper">
+                <div class="newAthleteAbout">
+                    <img ng-src="/assets/images/avatar.svg" alt="profile-image" />
+                    <div class="newAthleteAboutDetails">
+                        <div class="nameHeading">{{newAthlete.name}}</div>
+                        <div class="label">{{newAthlete.location}}</div>
+                    </div>
+                </div>
+
+                <div class="newAthleteDetails">
+                    <div class="newAthleteDetail">
+                        <div class="detailWrapper">
+                            <div class="label">Gender</div>
+                            <div>{{newAthlete.gender}}</div>
+                        </div>
+                        <div class="detailWrapper">
+                            <div class="label">Date of Birth</div>
+                            <div>{{newAthlete.dob.split('T')[0]}}</div>
+                        </div>
+                    </div>
+
+                    <div class="newAthleteDetail">
+                        <div class="detailWrapper">
+                            <div class="label">Sport</div>
+                            <div>{{selected_sport}}</div>
+                        </div>
+                        <div class="detailWrapper">
+                            <div class="label">Team</div>
+                            <div>{{newAthlete.team}}</div>
+                        </div>
+
+                    </div>
+
+                    <div class="newAthleteDetail">
+                        <div class="detailWrapper">
+                            <div class="label">Nationality</div>
+                            <div>{{newAthlete.nationality}}</div>
+                        </div>
+                        <div class="detailWrapper">
+                            <div class="label">Marital Status</div>
+                            <div>{{newAthlete.marital}}</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="newAthleteDesc">
+                    <div class="detailWrapper">
+                        <div class="label">Description</div>
+                        <div>{{newAthlete.description}}</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="btnGroup">
+                <a href="/#!/form" ng-click="backToForm($event)">Back</a>
+                <button class="btn btn-success" ng-click="submitData($event, '/list')">Submit</button>
+            </div>
+        </div>
+    </div>

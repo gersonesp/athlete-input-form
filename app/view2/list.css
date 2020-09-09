@@ -1,0 +1,22 @@
+.listHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-secondary span {
+    font-size: .875rem;
+}
+
+.tableWrapper {
+    overflow: auto;
+}
+
+.tableInput {
+    background: none;
+    border: none;
+}
+
+.displayHidden {
+    display: none;
+}

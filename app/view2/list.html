@@ -1,0 +1,101 @@
+<div class="tableContainer">
+    <div class="listHeader">
+        <h1>List of Athlete Profiles</h1>
+        <button class="btn btn-primary" ng-click="getForm($event, '/form')">Add a New Player</button>
+    </div>
+
+
+    <div class="tableWrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>sport</th>
+                    <th>nationality</th>
+                    <th>gender</th>
+                    <th>D.O.B</th>
+                    <th>Team</th>
+                    <th>location</th>
+                    <th>Marital Status</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <form ng-submit="submitChange($event)">
+                    <tr ng-repeat="athlete in athleteList">
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].name}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].name" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].sport}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].sport" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].nationality}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].nationality" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].gender}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].gender" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="date"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].dob.split('T')[0]}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].dob" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].team}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].team" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].location}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].location" />
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].marital}}" ng-required="required"
+                                ng-model="updatedAthlete[$index].marital">
+                        </td>
+                        <td>
+                            <input ng-class="{'tableInput': !$editMode.mode && editMode.index !== $index}" type="text"
+                                ng-readonly="!editMode.mode || editMode.index !== $index"
+                                value="{{updatedAthlete[$index].description}}"
+                                ng-model="updatedAthlete[$index].description" />
+                        </td>
+                        <td>
+                            <div class="btnContainer">
+                                <button ng-if="!editMode.mode || editMode.index !== $index" class="btn btn-secondary"
+                                    ng-click="editAthlete($event, $index, $editMode)">
+                                    Edit
+                                </button>
+
+                                <button ng-click="submitChange($event, $index)"
+                                    ng-class="{'displayHidden': !$editMode.mode && editMode.index !== $index}"
+                                    class="btn btn-secondary">
+                                    Update
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</div>

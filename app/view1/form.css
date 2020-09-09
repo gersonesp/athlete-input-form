@@ -1,0 +1,87 @@
+.formHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+}
+
+.inputWrapper {
+    margin-bottom: 15px;
+}
+
+.formSectionOne,
+.formSectionTwo {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.newAthleteAbout {
+    position: relative;
+    padding-bottom: 15px;
+
+}
+
+.formSectionOne:after,
+.newAthleteAbout:after {
+    position: absolute;
+    content: "";
+    width: calc(100% - 30px);
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: #ededed;
+    margin-left: 15px;
+}
+
+.formSectionTwo {
+    padding-top: 30px;
+}
+
+.cardWrapper {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: 0 2px 4px #ededed;
+}
+
+.newAthleteAbout {
+    display: flex;
+}
+
+.newAthleteAbout img {
+    padding-right: 30px;
+}
+
+.nameHeading {
+    font-size: 1.8rem;
+}
+
+.label {
+    color: #646464;
+    font-size: .875rem;
+}
+
+.newAthleteDetails {
+    padding: 15px 15px 0 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.detailWrapper {
+    padding-bottom: 15px;
+}
+
+
+.newAthleteDesc {
+    padding: 0 15px;
+}
+
+.btnGroup {
+    margin-top: 30px;
+}
+
+.btnGroup button {
+    margin-left: 15px;
+}

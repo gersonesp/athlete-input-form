@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 const mongoUri = process.env.MONGO_URI;
 
 const athletesRouter = require("./routes/api/athletes");

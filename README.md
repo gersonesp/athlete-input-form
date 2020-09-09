@@ -9,6 +9,8 @@ To run the application locally simply run the following commands:
   nodemon start
 ```
 
+[Deployed](https://athlete-input-form.herokuapp.com/#!/form)
+
 ---
 
 # `angular-seed` — the seed for AngularJS apps
